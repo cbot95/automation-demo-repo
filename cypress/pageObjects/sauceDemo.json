@@ -1,0 +1,23 @@
+
+
+{
+    "inventory": {
+       "url": "https://www.saucedemo.com/inventory.html"
+    
+    },
+   
+    "login":{
+       "url": "https://www.saucedemo.com/",
+       "container": "login-container",
+       "username-field": "username",
+       "password-field": "password",
+       "login-button": "login-button"
+
+    },
+
+    "credentials": {
+        "standard-user": "standard_user",
+        "password": "secret_sauce"
+    }
+    
+}
