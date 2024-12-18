@@ -1,7 +1,7 @@
 import sauceDemo from '../../pageObjects/sauceDemo.json'
-const {login, credentials} = sauceDemo
+const { login, credentials } = sauceDemo
 
-const  assertNoErrorElements = () => {
+const assertNoErrorElements = () => {
     cy.assertVisibility(login.errorBanner, 'not.exist');
     cy.get(login.fieldErrorIcon).should('not.exist')
 }
@@ -9,7 +9,7 @@ const  assertNoErrorElements = () => {
 const errorIconsVisible = () => {
     cy.get(login.fieldErrorIcon).should('have.length', 2).and('be.visible')
 }
- 
+
 beforeEach(() => {
     cy.goToPage()
     assertNoErrorElements()
@@ -34,10 +34,10 @@ describe('Tests login forms when fields are incomplete', () => {
         cy.assertVisibility(login.errorBanner).and('have.text', 'Epic sadface: Username is required');
         errorIconsVisible()
     })
-    
+
 });
 
-describe('Tests login form when user credentials are incorrect', () =>{
+describe('Tests login form when user credentials are incorrect', () => {
     it('should display error message when password is incorrect', () => {
         cy.login(credentials.standardUser, 'incorrectpwd')
         cy.assertVisibility(login.errorBanner).and('have.text', 'Epic sadface: Username and password do not match any user in this service');
@@ -53,8 +53,7 @@ describe('Tests login form when user credentials are incorrect', () =>{
         cy.assertVisibility(login.errorBanner).and('have.text', 'Epic sadface: Username and password do not match any user in this service');
         errorIconsVisible();
     })
-  })
+})
 
 
 
-  
