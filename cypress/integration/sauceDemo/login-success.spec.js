@@ -15,13 +15,8 @@ describe('Login Page Tests', () => {
         })
         
         it('should redirect to the homepage upon successful login', () => {
-           cy.getdataTest(login.usernameField).type(credentials.standardUser);
-            cy.getdataTest(login.passwordField).type(credentials.password);
-            cy.clickDataTest(login.button)
+           cy.login(credentials.standardUser, credentials.password)
             cy.url().should('eq',inventory.url)
         })
-        
-
-
   });
   

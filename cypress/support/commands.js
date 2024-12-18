@@ -29,5 +29,6 @@ Cypress.Commands.add('goToPage', (pagePath = '') => {
 Cypress.Commands.add('login', (username, password) => {
     cy.getdataTest(login.usernameField).type(username);
     cy.getdataTest(login.passwordField).type(password);
+    cy.clickDataTest(login.button)
 })
   

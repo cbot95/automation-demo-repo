@@ -1,4 +1,3 @@
-import { describe } from 'node:test';
 import sauceDemo from '../../pageObjects/sauceDemo.json'
 const {login, credentials} = sauceDemo
 
@@ -41,13 +40,16 @@ describe('Tests login forms when fields are incomplete', () => {
 describe('Tests login form when user credentials are incorrect', () =>{
     it('should display error message when password is incorrect', () => {
         cy.login(credentials.standardUser, 'incorrectpwd')
-        cy.clickDataTest(login.button)
         cy.assertVisibility(login.errorBanner).and('have.text', 'Epic sadface: Username and password do not match any user in this service');
         errorIconsVisible();
     })
-    it('should display error message when user is incorrect', () => {
+    it('should display error message when username is incorrect', () => {
         cy.login('incorrectuser', credentials.password)
-        cy.clickDataTest(login.button)
+        cy.assertVisibility(login.errorBanner).and('have.text', 'Epic sadface: Username and password do not match any user in this service');
+        errorIconsVisible();
+    })
+    it('should display error message when both user and password info is incorrect', () => {
+        cy.login('incorrectuser', credentials.password)
         cy.assertVisibility(login.errorBanner).and('have.text', 'Epic sadface: Username and password do not match any user in this service');
         errorIconsVisible();
     })
