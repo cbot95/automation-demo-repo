@@ -11,7 +11,8 @@
        "container": "login-container",
        "usernameField": "username",
        "passwordField": "password",
-       "button": "login-button"
+       "button": "login-button",
+       "errorBanner": "error"
 
     },
 

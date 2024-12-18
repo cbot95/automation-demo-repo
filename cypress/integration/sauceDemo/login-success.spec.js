@@ -1,4 +1,4 @@
-import sauceDemo from '../pageObjects/sauceDemo.json'
+import sauceDemo from '../../pageObjects/sauceDemo.json'
 const {login, credentials, inventory} = sauceDemo
 
 describe('Login Page Tests', () => {
@@ -21,6 +21,7 @@ describe('Login Page Tests', () => {
             cy.clickDataTest(login.button)
             cy.url().should('eq',inventory.url)
         })
+        
 
   });
   
