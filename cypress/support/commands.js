@@ -28,11 +28,24 @@ Cypress.Commands.add('getdataTest', (dataTest) => {
     return cy.get(`[data-test=${dataTest}]`);
 })
 
-Cypress.Commands.add('assertVisibility', (dataTest, options = {}) => {
-    return cy.getdataTest(dataTest).should(options)
+Cypress.Commands.add('assertVisibility', (dataTest, visibility = 'be.visible') => {
+    return cy.getdataTest(dataTest).should(visibility)
 })
 
 Cypress.Commands.add('clickDataTest', (dataTest, options = {}) => {
     return cy.get(`[data-test=${dataTest}]`).click(options)
 
 })
+
+// Added the following command to ensure the session gets cleared after each run. 
+Cypress.Commands.add('goToPage', (pagePath = '') => {
+    // Clear session storage
+    cy.window().then((win) => {
+      win.sessionStorage.clear();
+    });
+  
+    // Visit the base URL or the specified page path
+    cy.visit(pagePath);
+  });
+  
+  

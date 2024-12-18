@@ -2,7 +2,7 @@ import sauceDemo from '../../pageObjects/sauceDemo.json'
 const {login, credentials, inventory} = sauceDemo
 
 beforeEach(() => {
-    cy.visit('/');
+    cy.goToPage()
 });
 
 describe('Login Page Tests', () => {
