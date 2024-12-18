@@ -9,14 +9,14 @@
     "login":{
        "url": "https://www.saucedemo.com/",
        "container": "login-container",
-       "username-field": "username",
-       "password-field": "password",
-       "login-button": "login-button"
+       "usernameField": "username",
+       "passwordField": "password",
+       "button": "login-button"
 
     },
 
     "credentials": {
-        "standard-user": "standard_user",
+        "standardUser": "standard_user",
         "password": "secret_sauce"
     }
     

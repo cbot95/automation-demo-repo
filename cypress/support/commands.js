@@ -28,7 +28,11 @@ Cypress.Commands.add('getdataTest', (dataTest) => {
     return cy.get(`[data-test=${dataTest}]`);
 })
 
-Cypress.Commands.add('assertVisibility', (dataTest, options) => {
+Cypress.Commands.add('assertVisibility', (dataTest, options = {}) => {
+    return cy.getdataTest(dataTest).should(options)
+})
 
-    cy.getdataTest(dataTest).should(options)
+Cypress.Commands.add('clickDataTest', (dataTest, options = {}) => {
+    return cy.get(`[data-test=${dataTest}]`).click(options)
+
 })

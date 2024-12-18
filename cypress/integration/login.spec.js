@@ -1,23 +1,25 @@
 import sauceDemo from '../pageObjects/sauceDemo.json'
-
+const {login, credentials, inventory} = sauceDemo
 
 describe('Login Page Tests', () => {
     beforeEach(() => {
-      cy.visit(sauceDemo.login.url);
+        cy.clearCookies(); 
+        cy.clearLocalStorage();
+        cy.visit(sauceDemo.login.url);
     });
 
         it('displays login page', () => {
-            cy.getdataTest(sauceDemo.login.container).should('be.visible');
-            cy.getdataTest(sauceDemo.login.username-field).should('be.visible');
-            cy.get('[data-test="password"]').should('be.visible');
-            cy.get('[data-test="login-button"]').should('be.visible');
+            cy.assertVisibility(login.container, 'be.visible')
+            cy.assertVisibility(login.usernameField, 'be.visible');
+            cy.assertVisibility(login.passwordField, 'be.visible');
+            cy.assertVisibility(login.button,'be.visible');
         })
         
         it('should redirect to the homepage upon successful login', () => {
-            cy.get('[data-test="username"]').type(standardUser);
-            cy.get('[data-test="password"]').type(password);
-            cy.get('[data-test="login-button"]').click();
-
+           cy.getdataTest(login.usernameField).type(credentials.standardUser);
+            cy.getdataTest(login.passwordField).type(credentials.password);
+            cy.clickDataTest(login.button)
+            cy.url().should('eq',inventory.url)
         })
 
   });
