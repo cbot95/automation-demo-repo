@@ -1,12 +1,11 @@
 import sauceDemo from '../../pageObjects/sauceDemo.json'
 const {login, credentials, inventory} = sauceDemo
 
+beforeEach(() => {
+    cy.visit('/');
+});
+
 describe('Login Page Tests', () => {
-    beforeEach(() => {
-        cy.clearCookies(); 
-        cy.clearLocalStorage();
-        cy.visit(sauceDemo.login.url);
-    });
 
         it('displays login page', () => {
             cy.assertVisibility(login.container, 'be.visible')
@@ -22,6 +21,7 @@ describe('Login Page Tests', () => {
             cy.url().should('eq',inventory.url)
         })
         
+
 
   });
   
