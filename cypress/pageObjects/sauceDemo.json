@@ -12,8 +12,9 @@
        "usernameField": "username",
        "passwordField": "password",
        "button": "login-button",
-       "errorBanner": "error"
-
+       "errorBanner": "error",
+       "fieldErrorIcon": "[data-icon='times-circle']",
+       "formField": "[class='form_group']"
     },
 
     "credentials": {
