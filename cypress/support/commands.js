@@ -3,12 +3,12 @@ const { login } = sauceDemo
 
 
 Cypress.Commands.add('assertVisibility', (dataTest, visibility = 'be.visible') => {
+    // This command asserts if element is visible by default
     return cy.getdataTest(dataTest).should(visibility)
 })
 
 Cypress.Commands.add('clickDataTest', (dataTest, options = {}) => {
     return cy.get(`[data-test=${dataTest}]`).click(options)
-
 })
 
 Cypress.Commands.add('getdataTest', (dataTest) => {
