@@ -14,7 +14,10 @@
        "button": "login-button",
        "errorBanner": "error",
        "fieldErrorIcon": "[data-icon='times-circle']",
-       "formField": "[class='form_group']"
+       "formField": "[class='form_group']",
+       "usernameErrorMsg": "Epic sadface: Username is required",
+       "passwordErrorMsg": "Epic sadface: Password is required",
+       "credentialsErrorMsg": "Epic sadface: Username and password do not match any user in this service"
     },
 
     "credentials": {

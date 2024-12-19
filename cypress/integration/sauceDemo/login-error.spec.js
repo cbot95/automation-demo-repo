@@ -19,38 +19,38 @@ beforeEach(() => {
 describe('Tests login forms when fields are incomplete', () => {
     it('should display error message when all login fields are incomplete', () => {
         cy.clickDataTest(login.button)
-        cy.assertVisibility(login.errorBanner).and('have.text', 'Epic sadface: Username is required');
+        cy.assertVisibility(login.errorBanner).and('have.text', login.usernameErrorMsg);
+        errorIconsVisible()
+    })
+    it('should display error message when email field is incomplete', () => {
+        cy.getdataTest(login.passwordField).type(credentials.password);
+        cy.clickDataTest(login.button)
+        cy.assertVisibility(login.errorBanner).and('have.text', login.usernameErrorMsg);
         errorIconsVisible()
     })
     it('should display error message when password field is incomplete', () => {
         cy.getdataTest(login.usernameField).type(credentials.standardUser);
         cy.clickDataTest(login.button)
         errorIconsVisible()
-        cy.assertVisibility(login.errorBanner).and('have.text', 'Epic sadface: Password is required');
+        cy.assertVisibility(login.errorBanner).and('have.text', login.passwordErrorMsg);
     })
-    it('should display error message when email field is incomplete', () => {
-        cy.getdataTest(login.passwordField).type(credentials.password);
-        cy.clickDataTest(login.button)
-        cy.assertVisibility(login.errorBanner).and('have.text', 'Epic sadface: Username is required');
-        errorIconsVisible()
-    })
-
+  
 });
 
 describe('Tests login form when user credentials are incorrect', () => {
     it('should display error message when password is incorrect', () => {
         cy.login(credentials.standardUser, 'incorrectpwd')
-        cy.assertVisibility(login.errorBanner).and('have.text', 'Epic sadface: Username and password do not match any user in this service');
+        cy.assertVisibility(login.errorBanner).and('have.text', login.credentialsErrorMsg);
         errorIconsVisible();
     })
     it('should display error message when username is incorrect', () => {
         cy.login('incorrectuser', credentials.password)
-        cy.assertVisibility(login.errorBanner).and('have.text', 'Epic sadface: Username and password do not match any user in this service');
+        cy.assertVisibility(login.errorBanner).and('have.text', login.credentialsErrorMsg);
         errorIconsVisible();
     })
     it('should display error message when both user and password info is incorrect', () => {
         cy.login('incorrectuser', credentials.password)
-        cy.assertVisibility(login.errorBanner).and('have.text', 'Epic sadface: Username and password do not match any user in this service');
+        cy.assertVisibility(login.errorBanner).and('have.text', login.credentialsErrorMsg);
         errorIconsVisible();
     })
 })
