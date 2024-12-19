@@ -15,7 +15,6 @@ beforeEach(() => {
     assertNoErrorElements()
 });
 
-
 describe('Tests login forms when fields are incomplete', () => {
     it('should display error message when all login fields are incomplete', () => {
         cy.clickDataTest(login.button)

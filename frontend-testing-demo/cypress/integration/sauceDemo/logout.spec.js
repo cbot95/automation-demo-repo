@@ -17,7 +17,6 @@ describe('Tests logout', () => {
         cy.clickDataTest(sauceDemo.sidebarLogout, { force: true });
         cy.url().should('eq', login.url)
     });
-
     /* the following test is skipped as it is erroring with a 404 when it runs. 
     The url works when visiting manually. To be investigated.
     */
