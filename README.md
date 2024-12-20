@@ -47,16 +47,6 @@ Before running the tests, ensure the following are installed on your machine:
 - [npm](https://www.npmjs.com/) (comes with Node.js)
 
 ### Steps to Run the Tests
-1. Clone this repository to your local machine.
-2. ```markdown
-## How to Run the Tests
-
-### Prerequisites
-Before running the tests, ensure the following are installed on your machine:
-- [Node.js](https://nodejs.org/) (version 14 or later)
-- [npm](https://www.npmjs.com/) (comes with Node.js)
-
-### Steps to Run the Tests
 1. Clone this repository to your local machine:
    ```bash
    git clone https://github.com/cbot95/automation-demo-repo.git
