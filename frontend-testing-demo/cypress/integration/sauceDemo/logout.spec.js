@@ -10,9 +10,8 @@ describe('Tests logout', () => {
     it('should log out and successfully redirect to the login page', () => {
         cy.login(credentials.standardUser, credentials.password)
         cy.url().should('eq', inventory.url)
-        cy.assertVisibility(sauceDemo.openMenu);
-        cy.get('[class=bm-burger-button]').click()
-        //cy.clickDataTest(sauceDemo.openMenu, {force: true});
+        cy.get(sauceDemo.openMenu).should('be.visible');
+        cy.get(sauceDemo.openMenu).click()
         cy.assertVisibility(sauceDemo.sidebarLogout);
         cy.clickDataTest(sauceDemo.sidebarLogout, { force: true });
         cy.url().should('eq', login.url)

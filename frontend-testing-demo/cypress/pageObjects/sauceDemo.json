@@ -19,6 +19,6 @@
         "passwordErrorMsg": "Epic sadface: Password is required",
         "credentialsErrorMsg": "Epic sadface: Username and password do not match any user in this service"
     },
-    "openMenu": "open-menu",
+    "openMenu": "[class='bm-burger-button']",
     "sidebarLogout": "logout-sidebar-link"
 }
