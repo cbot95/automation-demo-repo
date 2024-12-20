@@ -15,7 +15,7 @@ The frontend tests cover basic login, logout, and login error scenarios. While t
 
 I decided to use Sauce Demo because it makes good use of `data-test` attributes. However, it’s worth noting that Sauce Demo is purely a frontend application and doesn’t make API calls, which is a shame as I would have really liked to have included assertions to test login API calls.  
 
-NOTE: While best practice is to ensure tests don't depend on each other, for some reason, it seems the login-error.spec.js test doesn’t run properly unless either the login-success.spec.js or logout.spec.js test has already run. I’ve attempted a few fixes, such as setting testIsolation: true in the Cypress config file and creating a custom command to clear session storage before navigating to the test page. However, due to time constraints, this issue remains unresolved. (I'm going to be cheeky and blame it on the website for now :))
+NOTE: While best practice is to ensure tests don't depend on each other, for some reason, it seems the `login-error.spec.js` test doesn’t run properly unless either the `login-success.spec.js` or `logout.spec.js` test has already run. I’ve attempted a few fixes, such as setting `testIsolation: true` in the Cypress config file and creating a custom command to clear session storage before navigating to the test page. However, due to time constraints, this issue remains unresolved. (I'm going to be cheeky and blame it on the website for now :))
 
 ## API Test
 
