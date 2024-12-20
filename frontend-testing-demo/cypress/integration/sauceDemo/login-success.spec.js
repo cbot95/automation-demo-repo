@@ -5,7 +5,7 @@ beforeEach(() => {
     cy.goToPage()
 });
 
-describe('Login Page Tests', () => {
+describe('Login Tests', () => {
     it('displays login page', () => {
         cy.assertVisibility(login.container, 'be.visible')
         cy.assertVisibility(login.usernameField, 'be.visible');

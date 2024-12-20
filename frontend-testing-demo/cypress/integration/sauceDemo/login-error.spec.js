@@ -33,7 +33,7 @@ describe('Tests login forms when fields are incomplete', () => {
         errorIconsVisible()
         cy.assertVisibility(login.errorBanner).and('have.text', login.passwordErrorMsg);
     })
-  
+
 });
 
 describe('Tests login form when user credentials are incorrect', () => {
